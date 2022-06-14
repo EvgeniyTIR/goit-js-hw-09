@@ -1,7 +1,7 @@
 const refs = {
     startBtn : document.querySelector('button[data-start]'),
     stopBtn : document.querySelector('button[data-stop]'),
-    bodyColor : document.querySelector('body'),
+    body : document.querySelector('body'),
 }
 
 refs.startBtn.addEventListener('click', HandlerStart);
@@ -21,6 +21,6 @@ function HandlerStop() {
  
 
 function getRandomHexColor() {
-    return refs.bodyColor.style.backgroundColor =
+    return refs.body.style.backgroundColor =
           `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
