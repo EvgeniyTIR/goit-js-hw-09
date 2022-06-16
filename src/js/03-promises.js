@@ -34,10 +34,10 @@ function handleSubmit(event) {
       }, delay);
     });
   };    
-    console.log()
+    
     for (let i = 0; i < arg.amount; i++) {
       let position = i + 1;
-      let delay = Number(arg.delay) + Number(arg.step) * i;       
+      let delay = Number(arg.delay) + arg.step * i;       
      
   createPromise(position, delay).then(({ position, delay }) => {
     console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);

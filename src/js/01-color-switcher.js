@@ -15,7 +15,7 @@ function HandlerStart() {
 };
 function HandlerStop() {
     clearInterval(timerId);
-    refs.bodyColor.style.backgroundColor = '#fafafa';
+    refs.body.style.backgroundColor = '';
     refs.startBtn.disabled = false ; 
 };
  
