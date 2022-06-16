@@ -1,4 +1,5 @@
 // import { Report } from 'notiflix/build/notiflix-report-aio';
+ // let delay = Number(arg.delay) + Number(arg.step) * i;   
 
 const form = document.querySelector(".form");
 
@@ -17,7 +18,7 @@ function handleSubmit(event) {
   };    
   
   event.currentTarget.reset();  
-  
+
   function createPromise(position, delay) {
     const shouldResolve = Math.random() > 0.3;
     return new Promise((resolve, reject) => {
@@ -36,12 +37,11 @@ function handleSubmit(event) {
     console.log()
     for (let i = 0; i < arg.amount; i++) {
       let position = i + 1;
-    let delay = arg.delay + arg.step * i;   
-    // let delay = Number(arg.delay) + Number(arg.step) * i;            
-      console.log(arg.delay)
-      console.log(arg.step)
-      console.log(arg.amount) 
-      console.log(delay)
+      let delay = arg.delay + arg.step * i;        
+      // console.log(arg.delay)
+      // console.log(arg.step)
+      // console.log(arg.amount) 
+      // console.log(delay)
   createPromise(position, delay).then(({ position, delay }) => {
     console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
