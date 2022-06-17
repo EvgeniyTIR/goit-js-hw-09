@@ -30,7 +30,7 @@ function handleSubmit(event) {
 
   let delayProm = delay;
 
-  for (let position = 0; position < amount; ++position) {
+  for (let position = 1; position <= amount; position++) {
 
     createPromise(position, delayProm).then(({ position, delay }) => {
       console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
