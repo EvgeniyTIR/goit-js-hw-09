@@ -1,4 +1,4 @@
-// import { Report } from 'notiflix/build/notiflix-report-aio';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const form = document.querySelector(".form");
 
@@ -27,19 +27,21 @@ function handleSubmit(event) {
      step:{ valueAsNumber: step = 0 },
      amount:{ valueAsNumber: amount = 0 }
 } = event.currentTarget;
-
+   
   let delayProm = delay;
 
   for (let position = 1; position <= amount; position++) {
 
     createPromise(position, delayProm).then(({ position, delay }) => {
+      Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
       console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
     })
     .catch(({ position, delay }) => {
+      Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
       console.log(`❌ Rejected promise ${position} in ${delay}ms`);
     });
     delayProm += step;
   };
 
-  //event.currentTarget.reset();
+  // event.currentTarget.reset();
 };

@@ -16,3 +16,23 @@ img {
   display: block;
   max-width: 100%;
 }
+input#datetime-picker{
+  border: 2px solid #212121;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+ .timer{
+   display: flex;
+   
+ }
+ .field {   
+  display: flex;   
+  flex-direction: column;
+  }
+  .field + .field {
+    margin-left: 30px;
+  }
+ .value{
+   font-size: 34px;
+ }
